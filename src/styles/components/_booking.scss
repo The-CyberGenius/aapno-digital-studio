@@ -1,0 +1,77 @@
+// Booking Section Styles
+.booking-section {
+    padding: 8rem 0;
+    position: relative;
+    background-color: $color-bg;
+    color: $color-text;
+    text-align: center;
+    overflow: hidden;
+
+    &__content {
+        position: relative;
+        z-index: 2;
+    }
+
+    h2 {
+        font-family: $font-secondary;
+        font-size: clamp(2rem, 5vw, 4rem);
+        margin-bottom: 3rem;
+        text-transform: uppercase;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 3rem; // Significant gap for breathing room
+        padding: 4rem 2rem;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr; // Stack vertically on mobile
+            gap: 2rem;
+            padding: 2rem 1rem;
+        }
+    }
+
+    .booking-card {
+        background: rgba(255, 255, 255, 0.03); // More subtle background
+        padding: 4rem 2.5rem; // Taller, more professional padding
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 4px; // Shallower radius for studio look
+        transition: all 0.4s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%; // consistent height
+
+        &:hover {
+            transform: translateY(-8px);
+            border-color: $color-accent;
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h3 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            color: $color-white;
+            font-family: $font-secondary;
+            letter-spacing: 0.05em;
+        }
+
+        p {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+
+        // Button container alignment
+        .btn-magnetic {
+            align-self: flex-start;
+            margin: 0 auto;
+        }
+    }
+}

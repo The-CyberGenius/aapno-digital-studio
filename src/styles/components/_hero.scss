@@ -1,0 +1,62 @@
+// components/_hero.scss
+@use '../variables' as *;
+
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-text;
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+
+        // Using a high-quality dark cinematic studio image
+        background-image: url('../../assets/hero-bg.png');
+        background-size: cover;
+        background-position: center;
+        filter: brightness(0.4); // Darken for text contrast
+        transform: scale(1.1); // For parallax
+    }
+
+    &__content {
+        text-align: center;
+        z-index: 10;
+        mix-blend-mode: difference; // Premium effect
+    }
+
+    &__title {
+        font-size: clamp(3rem, 10vw, 8rem);
+        line-height: 0.9;
+        letter-spacing: -0.02em;
+        font-weight: 600;
+        overflow: hidden;
+
+        .line {
+            display: block;
+            overflow: hidden;
+        }
+
+        span {
+            display: inline-block;
+            transform: translateY(100%); // Start hidden
+        }
+    }
+
+    &__subtitle {
+        margin-top: 2rem;
+        font-family: $font-primary;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        font-size: 0.875rem;
+        opacity: 0; // Animation will handle this
+    }
+}

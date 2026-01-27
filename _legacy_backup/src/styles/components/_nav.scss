@@ -1,0 +1,118 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem $container-padding;
+    @include flex-center;
+    justify-content: space-between;
+    z-index: 100;
+    mix-blend-mode: difference;
+    color: $color-white;
+    transition: padding $transition-fast;
+
+    @include desktop {
+        padding: 2rem $container-padding;
+    }
+
+    &__logo {
+        font-family: $font-heading;
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        z-index: 101; // Above mobile menu
+    }
+
+    &__toggle {
+        font-family: $font-body;
+        text-transform: uppercase;
+        cursor: pointer;
+        z-index: 101;
+        font-size: 0.9rem;
+        letter-spacing: 0.1em;
+
+        @include desktop {
+            display: none;
+        }
+    }
+
+    &__mobile-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: $color-bg;
+        z-index: 100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity $transition-medium, visibility $transition-medium;
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &__mobile-list {
+        list-style: none;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    &__mobile-link {
+        font-family: $font-heading;
+        font-size: 3rem;
+        color: $color-text-main;
+        text-transform: uppercase;
+        font-weight: 300;
+        display: block;
+
+        &:hover {
+            color: $color-accent;
+        }
+    }
+
+    &__list {
+        display: none; // Hide on mobile
+        gap: 3rem;
+        list-style: none;
+
+        @include desktop {
+            display: flex;
+        }
+    }
+
+    &__link {
+        font-family: $font-body;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        position: relative;
+        font-weight: 600;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: currentColor;
+            transition: width $transition-fast;
+        }
+
+        &:hover::after {
+            width: 100%;
+        }
+    }
+}

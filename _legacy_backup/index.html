@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apno Digital Studio | Cinematic Visuals</title>
+</head>
+
+<body>
+
+
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <div class="nav__logo">Apno Studio</div>
+    <div class="nav__toggle">Menu</div>
+    <div class="nav__mobile-menu">
+      <ul class="nav__mobile-list">
+        <li><a href="/" class="nav__mobile-link">Home</a></li>
+        <li><a href="/work/" class="nav__mobile-link">Work</a></li>
+        <li><a href="/contact/" class="nav__mobile-link">Contact</a></li>
+      </ul>
+    </div>
+    <ul class="nav__list">
+      <li><a href="/" class="nav__link">Home</a></li>
+      <li><a href="/work/" class="nav__link">Work</a></li>
+      <li><a href="/contact/" class="nav__link">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE TRANSITION -->
+  <div class="transition-overlay"></div>
+
+  <main data-scroll-container>
+
+    <!-- HERO SECTION -->
+    <section class="hero" data-scroll-section>
+      <div class="hero__bg"
+        style="background-image: url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2670&auto=format&fit=crop'); background-size: cover; background-position: center;">
+        <div class="hero__overlay"></div>
+      </div>
+      <div class="hero__content container">
+        <h1 class="hero__title">
+          <span class="hero__title-line" data-scroll data-scroll-speed="1">Visual</span>
+          <span class="hero__title-line" data-scroll data-scroll-speed="2">Narratives</span>
+        </h1>
+        <p class="hero__subtitle">Apno Digital Studio • Sikar</p>
+      </div>
+      <div class="hero__scroll-down">Scroll</div>
+    </section>
+
+    <!-- MARQUEE SECTION -->
+    <div class="marquee-strip" data-scroll-section>
+      <div class="marquee-strip__inner">
+        <span>POLITICS • MUSIC PROMOS • CINEMATOGRAPHY • WEDDINGS • DOCUMENTARIES • POLITICS • MUSIC PROMOS •
+          CINEMATOGRAPHY</span>
+      </div>
+    </div>
+
+    <!-- PROJECT REVEAL CONTAINER (Fixed) -->
+    <div class="project-reveal">
+      <div class="project-reveal__inner">
+        <div class="project-reveal__img"
+          style="background-image: url('https://images.unsplash.com/photo-1590930294970-1097fa623478?q=80&w=2670');">
+        </div>
+      </div>
+    </div>
+
+    <!-- WORK SHOWCASE -->
+    <section class="work-showcase" data-scroll-section>
+      <div class="container">
+        <h2 class="section-title" data-scroll data-scroll-speed="0.5">Selected Work</h2>
+
+        <div class="project-list">
+          <!-- Project 1: Political -->
+          <div class="project-item" data-img="https://images.unsplash.com/photo-1540910419868-474947cebacb?q=80&w=2070">
+            <div class="project-item__info">
+              <h3>Election Trail 2024</h3>
+              <p>Political Campaign / Documentary</p>
+            </div>
+            <div class="project-item__arrow">→</div>
+          </div>
+
+          <!-- Project 2: Music -->
+          <div class="project-item" data-img="https://images.unsplash.com/photo-1514320291840-2e0a962a2775?q=80&w=2070">
+            <div class="project-item__info">
+              <h3>Desert Rhythms</h3>
+              <p>Music Promo / Vibe</p>
+            </div>
+            <div class="project-item__arrow">→</div>
+          </div>
+
+          <!-- Project 3: Cinematic -->
+          <div class="project-item" data-img="https://images.unsplash.com/photo-1511285560982-1351cdeb9821?q=80&w=2070">
+            <div class="project-item__info">
+              <h3>The Royal Heritage</h3>
+              <p>Cinematic Wedding</p>
+            </div>
+            <div class="project-item__arrow">→</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" data-scroll-section>
+      <div class="container">
+        <h2>Let's Create</h2>
+        <a href="mailto:aapnodigitalstudio@gmail.com" class="footer__cta">aapnodigitalstudio@gmail.com</a>
+      </div>
+    </footer>
+
+  </main>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

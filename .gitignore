@@ -1,0 +1,12 @@
+# System
+.DS_Store
+.env
+.tmp/
+
+# Dependencies
+node_modules/
+/dist
+
+# Credentials
+credentials.json
+token.json

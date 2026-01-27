@@ -1,0 +1,32 @@
+{
+    "project_name": "Apno Digital Studio",
+    "contact_details": {
+        "whatsapp_number": "+91 97997 73608",
+        "whatsapp_link": "https://wa.me/919799773608",
+        "email": "aapnodigitalstudio@gmail.com"
+    },
+    "description": "A high-end, cinematic photography studio website with immersive animations and professional booking features.",
+    "tech_stack": [
+        "HTML5",
+        "SCSS (BEM Architecture)",
+        "Vanilla JavaScript (ES Modules)",
+        "GSAP (GreenSock Animation Platform)",
+        "Locomotive Scroll (Smooth Scrolling)"
+    ],
+    "prompt": "Create a premium, cinematic website for 'Apno Digital Studio' using HTML, SCSS, and Vanilla JS. \n\n### CRITICAL CONTACT INFO\n- **WhatsApp Number**: +91 97997 73608\n- **Booking Link**: MUST redirect to `https://wa.me/919799773608` for all booking actions.\n\n### Design Language\n- **Theme**: Dark Mode, Professional Cinema Camera UI vibe.\n- **Colors**: Black/Dark Grey background (#0a0a0a), White text, Red Accents (REC indicators).\n- **Visuals**: High-end glassmorphism, subtle noise textures, camera lens effects (vignette, chromatic aberration).\n\n### Key Features to Implement\n1. **Cinematic Intro Sequence**:\n   - On load, show a black screen.\n   - Animate two professional drones flying in from the sides.\n   - Transition to a 'Camera Lens' view that zooms in aggressively (scale 300x) to reveal the website.\n   - Use GSAP Timeline for sequencing.\n\n2. **Camera Frame UI Overlay**:\n   - Fixed overlay on top of all content (pointer-events-none).\n   - Show 'REC' indicator with blinking red dot.\n   - Corner frame markers and center crosshair with 'drift' animation.\n   - Add a 'Lens Breathing' effect (slow zoom in/out of the UI) and subtle 'Handheld Shake' to the elements.\n\n3. **Hero Section**:\n   - Full-screen parallax background image (use a dark, high-end studio shot).\n   - Large Typography: 'APNO DIGITAL STUDIO' with staggered text reveal animation.\n\n4. **Work Showcase**:\n   - List of projects (Election, Weddings, etc.).\n   - **Hover Effect**: When hovering a list item, reveal a floating image that follows the cursor.\n\n5. **Booking Section**:\n   - Horizontal scrolling layout (no vertical stacking).\n   - Three glass-effect cards: Photography, Videography, Studio Rental.\n   - **Magnetic Buttons**: 'Book Now' buttons that stick to the mouse cursor slightly.\n   - **ACTION**: Buttons must link directly to WhatsApp: `https://wa.me/919799773608`.\n\n6. **Floating Action Button**:\n   - Fixed bottom-right circular button.\n   - Style: Dark frosted glass/blur effect with a white WhatsApp icon.\n   - Hover: Glows green and scales up.\n   - Action: Opens WhatsApp chat with +91 97997 73608.\n\n### Asset Requirements\n- Use placeholders or Unsplash for background images.\n- Use SVG for icons (WhatsApp).\n\n### Technical Requirements\n- Use `locomotive-scroll` for smooth inertial scrolling.\n- Use `GSAP` for all animations.\n- Ensure fully responsive design (mobile-first approach).",
+    "file_structure_hint": {
+        "src": {
+            "styles": [
+                "_base.scss",
+                "_animations.scss",
+                "components/_hero.scss",
+                "components/_booking.scss",
+                "components/_camera-ui.scss",
+                "components/_buttons.scss"
+            ],
+            "scripts": [
+                "main.js"
+            ]
+        }
+    }
+}

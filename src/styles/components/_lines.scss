@@ -1,0 +1,97 @@
+// components/_lines.scss
+@use '../variables' as *;
+
+.bg-lines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10; // Moved up to interact with camera UI visually
+    pointer-events: none;
+    display: flex;
+    justify-content: space-around;
+    opacity: 0.15; // Increased visibility
+
+    .line {
+        width: 1px;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.3);
+        position: relative;
+
+        // Cross markings
+        &::before {
+            content: '';
+            position: absolute;
+            top: 33%;
+            left: -5px;
+            width: 10px;
+            height: 1px;
+            background: $color-accent;
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 20vh;
+            background: linear-gradient(to bottom, transparent, $color-accent-2, transparent); // Red drops
+            animation: drop 4s infinite cubic-bezier(0.4, 0.26, 0, 0.97);
+        }
+
+        &:nth-child(1) {
+            &::after {
+                animation-delay: 0s;
+            }
+
+            &::before {
+                top: 20%;
+            }
+        }
+
+        &:nth-child(2) {
+            &::after {
+                animation-delay: 2.5s;
+            }
+
+            &::before {
+                top: 60%;
+            }
+        }
+
+        &:nth-child(3) {
+            &::after {
+                animation-delay: 1s;
+            }
+
+            &::before {
+                top: 40%;
+            }
+        }
+
+        &:nth-child(4) {
+            &::after {
+                animation-delay: 3.5s;
+            }
+
+            &::before {
+                top: 80%;
+            }
+        }
+    }
+}
+
+@keyframes drop {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(500%);
+    }
+
+    // Go well below
+}

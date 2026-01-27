@@ -1,0 +1,15 @@
+// main.scss
+@use 'variables';
+@use 'base';
+@use 'animations';
+@use 'components/hero';
+@use 'components/lines';
+@use 'components/work';
+@use 'components/marquee';
+@use 'components/footer';
+@use 'components/buttons';
+@use 'components/gallery';
+@use 'components/camera-ui';
+@use 'components/intro-overlay';
+
+// Global specific styles can go here until refactored into components@import 'components/booking';

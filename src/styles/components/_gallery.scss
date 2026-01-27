@@ -1,0 +1,56 @@
+// components/_gallery.scss
+@use '../variables' as *;
+
+.gear-gallery {
+    padding: 10rem 0;
+    position: relative;
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 2rem;
+    }
+
+    &__intro {
+        grid-column: 2 / span 4;
+        margin-bottom: 5rem;
+
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__grid {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    &__item {
+        position: relative;
+        overflow: hidden;
+        height: 400px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1s ease;
+        }
+
+        &:hover img {
+            transform: scale(1.1);
+        }
+
+        // Staggered layout
+        &:nth-child(2) {
+            margin-top: 5rem;
+        }
+
+        &:nth-child(3) {
+            margin-top: -3rem;
+        }
+    }
+}

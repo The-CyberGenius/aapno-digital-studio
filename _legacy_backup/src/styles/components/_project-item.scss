@@ -1,0 +1,108 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.work-showcase {
+    padding: 10vh 0;
+}
+
+.section-title {
+    @include heading-lg;
+    margin-bottom: 4rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba($color-white, 0.2);
+}
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.project-item {
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    padding: 3rem 0;
+    border-bottom: 1px solid rgba($color-white, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: padding $transition-fast, border-color $transition-fast;
+
+    &__info {
+        h3 {
+            font-family: $font-heading;
+            font-size: clamp(2rem, 4vw, 4rem);
+            font-weight: 400;
+            color: $color-text-main;
+            transition: color $transition-fast;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-family: $font-body;
+            font-size: 0.9rem;
+            color: $color-gray;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 0.5rem;
+        }
+    }
+
+    &__arrow {
+        font-size: 2rem;
+        opacity: 0;
+        transform: translateX(-20px);
+        transition: all $transition-medium;
+        color: $color-accent;
+    }
+
+    &:hover {
+        border-color: rgba($color-white, 0.3);
+        padding-left: 2rem; // Shift content right
+        padding-right: 2rem;
+
+        h3 {
+            color: $color-white;
+        }
+
+        .project-item__arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+}
+
+// Fixed Reveal Element
+.project-reveal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 500px; // Portrait ratio
+    pointer-events: none;
+    z-index: 50;
+    opacity: 0;
+    visibility: hidden;
+
+    @include mobile {
+        display: none; // Disable on mobile for now
+    }
+
+    &__inner {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 4px;
+        transform-origin: center;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        transform: scale(1.2);
+        will-change: transform;
+    }
+}

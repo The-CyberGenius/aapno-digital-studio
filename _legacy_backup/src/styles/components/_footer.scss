@@ -1,0 +1,28 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.footer {
+    padding: 10vh 0 5vh;
+    background-color: $color-bg;
+    color: $color-text-main;
+    text-align: center;
+
+    h2 {
+        @include heading-lg;
+        margin-bottom: 2rem;
+        color: $color-gray;
+    }
+
+    &__cta {
+        @include heading-lg;
+        font-size: clamp(2rem, 5vw, 6rem); // Bigger for impact
+        color: $color-white;
+        border-bottom: 2px solid transparent;
+        transition: border-color $transition-fast, color $transition-fast;
+
+        &:hover {
+            color: $color-accent;
+            border-bottom-color: $color-accent;
+        }
+    }
+}

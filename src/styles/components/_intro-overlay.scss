@@ -1,0 +1,53 @@
+// components/_intro-overlay.scss
+@use '../variables' as *;
+
+.intro-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: $color-bg;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: $color-text;
+    transition: opacity 1s $ease-premium;
+
+    &.is-hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    &__logo {
+        font-family: $font-display;
+        font-size: 2rem;
+        letter-spacing: 0.5em;
+        margin-bottom: 2rem;
+        opacity: 0.8;
+    }
+
+    &__btn {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: $color-text;
+        padding: 1rem 3rem;
+        font-family: $font-primary;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 0.2em;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+
+        // "Enter" hover effect
+        &:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 0.3em;
+        }
+    }
+}

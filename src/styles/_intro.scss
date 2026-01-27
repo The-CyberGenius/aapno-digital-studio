@@ -1,0 +1,77 @@
+// Intro Sequence Styles
+.intro-sequence {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    pointer-events: none; // Allow clicks to pass through after it fades (or handle with JS)
+
+    &__drone {
+        position: absolute;
+        width: 30vw; // Adjust size as needed
+        max-width: 400px;
+        z-index: 2;
+
+        img {
+            width: 100%;
+            display: block;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+        }
+
+        &--left {
+            left: -40%; // Start off-screen
+            top: 20%;
+        }
+
+        &--right {
+            right: -40%; // Start off-screen
+            bottom: 20%;
+            transform: scaleX(-1); // Mirror image
+        }
+
+        .drone-light {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: #ff0000;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+            top: 40%; // Adjust based on image
+            left: 50%; // Adjust based on image
+            animation: droneBlink 0.8s infinite alternate;
+        }
+    }
+
+    &__lens {
+        position: absolute;
+        width: 0; // Start small/invisible for zoom effect
+        height: 0;
+        z-index: 3;
+        border-radius: 50%;
+        overflow: hidden;
+
+        img {
+            width: 100vw; // Ensure it can fill screen
+            height: 100vw; // Keep it square- ish or cover
+            max-width: none;
+            object-fit: cover;
+        }
+    }
+}
+
+@keyframes droneBlink {
+    from {
+        opacity: 0.2;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
