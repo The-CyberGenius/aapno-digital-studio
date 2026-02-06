@@ -1,0 +1,218 @@
+// pages/_campaign.scss
+@use '../variables' as *;
+
+$color-election-blue: #0a192f; // Deep Royal Blue
+$color-election-blue-light: #112240;
+$color-saffron: #FF9933; // Indian Saffron
+$color-green: #138808; // Indian Green
+$color-gold: #FFD700;
+
+.campaign-page {
+    background-color: $color-election-blue;
+    background: linear-gradient(135deg, $color-election-blue 0%, $color-election-blue-light 100%);
+    color: $color-text;
+
+    // --- HERO SLIDER ---
+    .camp-hero {
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &__slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        &__slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            transform: scale(1);
+
+            &.is-active {
+                opacity: 1;
+                // Slow zoom effect handled by JS GSAP or added here as generic animation
+            }
+
+            // Overlay to darken images
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(10, 25, 47, 0.7); // Blue tint overlay
+            }
+        }
+
+        &__content {
+            z-index: 10;
+            text-align: center;
+            max-width: 800px;
+            padding: 0 1rem;
+        }
+
+        &__title {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-family: $font-display;
+            line-height: 1;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        &__subtitle {
+            font-size: 1.2rem;
+            color: $color-saffron; // Saffron Accent
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+    }
+
+    // --- SERVICES LIST (Cinematic Redesign) ---
+    .camp-services {
+        padding: 8rem 0;
+        background: radial-gradient(circle at top right, rgba($color-saffron, 0.05), transparent 40%),
+            radial-gradient(circle at bottom left, rgba($color-green, 0.05), transparent 40%);
+
+        &__title {
+            font-size: 3rem;
+            margin-bottom: 6rem;
+            text-align: left; // Left align for list style
+            color: white;
+            padding-left: 2rem;
+            border-left: 5px solid $color-saffron;
+            font-family: $font-display;
+
+            span {
+                color: $color-saffron;
+            }
+        }
+
+        &__grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0; // No gap, borders handle separation
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        &__card {
+            display: grid;
+            grid-template-columns: 80px 1fr 2fr; // Number - Title - Desc
+            align-items: baseline;
+            gap: 2rem;
+
+            padding: 3rem 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            background: transparent;
+            transition: all 0.4s ease;
+            position: relative;
+            cursor: default;
+
+            @media (max-width: 768px) {
+                grid-template-columns: 1fr; // Stack on mobile
+                gap: 1rem;
+            }
+
+            // Numbering
+            &::before {
+                content: attr(data-index);
+                font-family: $font-display;
+                font-size: 1.5rem;
+                font-weight: 400;
+                color: rgba(255, 255, 255, 0.3);
+                position: static; // Flow with grid
+                transition: color 0.3s ease;
+            }
+
+            &:hover {
+                background: rgba($color-saffron, 0.02); // Very subtle highlight
+                border-bottom-color: rgba($color-saffron, 0.5);
+                padding-left: 3rem; // Slight shift right
+
+                &::before {
+                    color: $color-saffron;
+                }
+
+                h3 {
+                    color: $color-saffron;
+                    transform: translateX(10px);
+                }
+            }
+
+            h3 {
+                font-size: 2rem;
+                margin: 0;
+                font-family: $font-display;
+                color: white;
+                border: none;
+                padding: 0;
+                font-weight: 400;
+                transition: all 0.3s ease;
+            }
+
+            p {
+                color: rgba(255, 255, 255, 0.6);
+                font-size: 1.1rem;
+                line-height: 1.6;
+                margin: 0;
+                max-width: 600px;
+            }
+        }
+    }
+
+    // --- GALLERY ---
+    .camp-gallery {
+        padding: 8rem 0;
+
+        &__grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+
+            @media (min-width: 768px) {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            img {
+                width: 100%;
+                height: 400px;
+                object-fit: cover;
+
+                // Photo Frame Style
+                border: 10px solid #fff; // White matting
+                outline: 1px solid rgba(0, 0, 0, 0.2); // Subtle outer frame definition
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); // Deep shadow for depth
+                background-color: #fff; // Ensure matting is solid
+
+                filter: grayscale(0.2); // Slight vintage feel
+                transition: all 0.4s ease;
+
+                &:hover {
+                    filter: grayscale(0);
+                    transform: scale(1.02); // Slight lift
+                    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+                    z-index: 2;
+                    border-color: #f8f8f8;
+                }
+            }
+        }
+    }
+}

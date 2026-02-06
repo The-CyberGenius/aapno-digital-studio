@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Political Campaign Management | Aapno Digital Studio</title>
+    <!-- Keep fonts same as index.html -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Oswald:wght@400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="campaign-page">
+
+    <div data-scroll-container>
+
+        <!-- NAV (Simple Back Button) -->
+        <nav style="position: fixed; top: 2rem; left: 2rem; z-index: 100;">
+            <a href="index.html"
+                style="color: white; text-decoration: none; font-family: 'Oswald'; font-size: 1.2rem; display: flex; align-items: center; gap: 0.5rem;">
+                ← BACK
+            </a>
+        </nav>
+
+        <!-- HERO SLIDER -->
+        <section class="camp-hero" data-scroll-section>
+            <div class="camp-hero__slider" id="camp-slider">
+                <!-- Slides (Placeholders for now, user can replace) -->
+                <div class="camp-hero__slide is-active"
+                    style="background-image: url('/src/assets/showcase/election/DSC01369.jpg');">
+                </div>
+                <div class="camp-hero__slide"
+                    style="background-image: url('/src/assets/showcase/election/IMG-20250219-WA0197.jpg');">
+                </div>
+                <div class="camp-hero__slide"
+                    style="background-image: url('/src/assets/showcase/election/IMG-20260203-WA0006.jpg');">
+                </div>
+            </div>
+
+            <div class="camp-hero__content">
+                <h1 class="camp-hero__title" data-scroll data-scroll-speed="0.1">Election<br>Management</h1>
+                <p class="camp-hero__subtitle" data-scroll data-scroll-speed="0.2">Strategic • Digital • Grassroot</p>
+                <div style="margin-top: 2rem;">
+                    <a href="https://wa.me/919799773608?text=Hello,%20I%20want%20to%20discuss%20Election%20Campaign%20Management%20services."
+                        class="btn-magnetic" target="_blank" style="display: inline-block;">
+                        <span class="btn-magnetic__fill"></span>
+                        <span class="btn-magnetic__text">Discuss Strategy</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION -->
+        <section class="camp-services" data-scroll-section>
+            <div class="container">
+                <h2 class="camp-services__title" data-scroll data-scroll-speed="0.1">Our <span>Services</span></h2>
+
+                <div class="camp-services__grid">
+
+                    <div class="camp-services__card" data-index="01">
+                        <h3>Booth Analysis & Management</h3>
+                        <p>Detailed micro-level analysis of every booth. Data-driven strategies to maximize voter
+                            turnout and swing uncertain votes.</p>
+                    </div>
+
+                    <div class="camp-services__card" data-index="02">
+                        <h3>Call Center Setup</h3>
+                        <p>Dedicated outbound and inbound calling teams for voter feedback, campaign messaging, and
+                            real-time support.</p>
+                    </div>
+
+                    <div class="camp-services__card" data-index="03">
+                        <h3>Technology</h3>
+                        <p>State-of-the-art tech stack including voter apps, CRM for cadres, and predictive analytics
+                            dashboards.</p>
+                    </div>
+
+                    <div class="camp-services__card" data-index="04">
+                        <h3>Election War Room</h3>
+                        <p>24/7 Command Center monitoring news, social sentiment, and ground reports to make rapid
+                            strategic decisions.</p>
+                    </div>
+
+                    <div class="camp-services__card" data-index="05">
+                        <h3>Training & Workspace</h3>
+                        <p>Professional training modules for karyakartas (volunteers) and organized workspace
+                            management.</p>
+                    </div>
+
+                    <div class="camp-services__card" data-index="06">
+                        <h3>Ground Intelligence (Survey)</h3>
+                        <p>Accurate pre-poll surveys and mood-of-the-nation reports from the ground level to gauge
+                            public sentiment.</p>
+                    </div>
+
+                    <div class="camp-services__card" data-index="07">
+                        <h3>Personal Branding</h3>
+                        <p>Crafting the candidate's public image, speech writing, and policy promotion strategies to
+                            resonate with the masses.</p>
+                    </div>
+
+                    <div class="camp-services__card" data-index="08">
+                        <h3>Social Media</h3>
+                        <p>Dominating the digital narrative across Facebook, Twitter, Instagram, and WhatsApp with viral
+                            content.</p>
+                    </div>
+
+                    <div class="camp-services__card" data-index="09">
+                        <h3>Political Canvassing</h3>
+                        <p>Structured door-to-door campaigns with tracking and effectiveness measurement.</p>
+                    </div>
+
+                    <div class="camp-services__card" data-index="10">
+                        <h3>Strategic Research</h3>
+                        <p>In-depth insights into opposition strategies, demographic shifts, and policy impacts.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY -->
+        <section class="camp-gallery" data-scroll-section>
+            <div class="container">
+                <div class="camp-gallery__grid" id="campaign-gallery-grid">
+                    <!-- Dynamic images from src/assets/showcase/election will be injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- botton buttom -->
+        <div style="margin-top: 4rem; display: flex; justify-content: center; width: 100%;" data-scroll-section>
+            <a href="https://wa.me/919799773608?text=Hello,%20I%20want%20to%20discuss%20Election%20Campaign%20Management%20services."
+                class="btn-magnetic" target="_blank" style="display: inline-block;">
+                <span class="btn-magnetic__fill"></span>
+                <span class="btn-magnetic__text">Discuss Strategy</span>
+            </a>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="footer" data-scroll-section>
+            <div class="container">
+                <h2>Let's Win This</h2>
+                <div class="footer__copy">© 2017 Aapno Digital Studio</div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
