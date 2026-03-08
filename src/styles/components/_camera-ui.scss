@@ -5,12 +5,13 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%; // Changed from 100vw to prevent horizontal scrollbar overflow
     height: 100vh;
     z-index: 100; // Above everything
     pointer-events: none; // Let clicks pass through
     padding: 2rem;
     mix-blend-mode: exclusion; // Premium blend effect
+    overflow: hidden; // Ensure children don't push the borders
 
     &__corner {
         position: absolute;

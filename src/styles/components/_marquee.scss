@@ -11,6 +11,7 @@
     z-index: 5;
     transform: rotate(-2deg) scale(1.1); // Dynamic angle
     margin: 5rem 0;
+    width: 100%; // Ensure it doesn't push horizontally past bounds
 
     &__inner {
         display: inline-block;

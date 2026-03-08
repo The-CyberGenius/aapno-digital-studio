@@ -27,40 +27,163 @@
     }
 
     &__map {
-        margin: 5rem auto 0;
+        margin: 4rem auto 3rem;
         width: 100%;
-        max-width: 900px;
-        border-radius: 20px;
-        overflow: hidden;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        transition: transform 0.4s ease, border-color 0.4s ease;
+        max-width: 420px;
 
         @media (max-width: 768px) {
             margin-top: 3rem;
-            width: calc(100% - 2rem);
-            border-radius: 12px;
+            max-width: calc(100% - 3rem);
         }
 
-        &:hover {
-            transform: translateY(-5px);
-            border-color: rgba(255, 255, 255, 0.3);
-        }
+        &-frame {
+            position: relative;
+            padding: 1rem; // Spacing for the brackets
 
-        iframe {
-            display: block;
-            width: 100%;
-            height: 450px;
-            border: 0;
-            filter: grayscale(20%) contrast(1.1); // Make it blend with the dark theme slightly
+            .corner {
+                position: absolute;
+                width: 2rem;
+                height: 2rem;
+                border: 2px solid rgba(255, 255, 255, 0.4);
+                transition: all 0.4s ease;
+                z-index: 2;
 
-            @media (max-width: 768px) {
-                height: 500px;
+                &-tl {
+                    top: 0;
+                    left: 0;
+                    border-right: none;
+                    border-bottom: none;
+                }
+
+                &-tr {
+                    top: 0;
+                    right: 0;
+                    border-left: none;
+                    border-bottom: none;
+                }
+
+                &-bl {
+                    bottom: 0;
+                    left: 0;
+                    border-right: none;
+                    border-top: none;
+                }
+
+                &-br {
+                    bottom: 0;
+                    right: 0;
+                    border-left: none;
+                    border-top: none;
+                }
+            }
+
+            &:hover .corner {
+                border-color: rgba(255, 255, 255, 0.8);
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+
+            iframe {
+                display: block;
+                width: 100%;
+                height: 280px;
+                border: 0;
+                border-radius: 20px;
+                filter: contrast(1.1); // Removed grayscale so the gold rating stars pop!
+                pointer-events: auto;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+                transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+
+                @media (max-width: 768px) {
+                    height: 250px;
+                }
+            }
+
+            &:hover iframe {
+                transform: translateY(-5px) scale(1.02);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
             }
         }
     }
 
+    &__rating-badge {
+        margin: 0 auto;
+        display: inline-flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.8rem 1.2rem;
+        background: #333333; // Dark gray matching the provided image
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 12px;
+        text-decoration: none;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        transform: translateY(-20px);
+
+        &:hover {
+            transform: translateY(-23px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .google-logo {
+            background: #ffffff;
+            border-radius: 6px;
+            padding: 0.4rem 0.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img {
+                height: 18px;
+                width: auto;
+            }
+        }
+
+        .rating-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+
+            .stars {
+                display: flex;
+                gap: 2px;
+
+                svg {
+                    width: 16px;
+                    height: 16px;
+                    fill: #fbbc04; // Google yellow
+                }
+            }
+
+            .text {
+                font-family: inherit;
+                color: #ffffff;
+                font-size: 0.9rem;
+                display: flex;
+                align-items: center;
+                gap: 0.3rem;
+
+                strong {
+                    font-weight: 600;
+                    font-size: 1rem;
+                }
+
+                .light {
+                    color: #b0b0b0;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+
+    &__bottom {
+        margin-top: 4rem;
+        padding-bottom: 4rem; // Gives safe clearance for Floating WhatsApp Button
+        position: relative;
+        z-index: 10;
+    }
+
     &__copy {
-        margin-top: 5rem;
         opacity: 0.5;
         font-size: 0.8rem;
     }
